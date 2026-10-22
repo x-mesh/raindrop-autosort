@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="ui.css">
+</head>
+<body class="popup">
+  <header>
+    <strong>Save to Raindrop</strong>
+    <a id="openOptions" href="#">Options</a>
+  </header>
+
+  <label>Title
+    <input id="title" type="text">
+  </label>
+  <div id="url" class="muted ellipsis"></div>
+  <div id="duplicate" class="muted warn" hidden></div>
+
+  <label><span class="label-row">Collection <a id="refreshCollections" href="#">Refresh</a></span>
+    <select id="collection" disabled><option>Loading...</option></select>
+  </label>
+  <div id="reason" class="muted"></div>
+
+  <label>Tags
+    <input id="tags" type="text" placeholder="comma separated">
+  </label>
+
+  <label>Note
+    <textarea id="note" rows="2"></textarea>
+  </label>
+
+  <div class="actions">
+    <button id="reclassify" type="button" class="secondary">Re-run</button>
+    <button id="save" type="button" disabled>Save</button>
+  </div>
+  <div id="status" role="status"></div>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

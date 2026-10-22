@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Raindrop Autosort options</title>
+  <link rel="stylesheet" href="ui.css">
+</head>
+<body class="options">
+  <h1>Raindrop Autosort <span id="version" class="muted"></span></h1>
+
+  <fieldset>
+    <legend>Raindrop</legend>
+    <label>Auth
+      <select id="authMode">
+        <option value="session">Browser login (app.raindrop.io cookie)</option>
+        <option value="token">Test token (official REST API)</option>
+      </select>
+    </label>
+    <label id="tokenRow">Test token
+      <input id="token" type="password" autocomplete="off">
+      <div class="muted">app.raindrop.io/settings/integrations &rarr; create app &rarr; "Create test token". Stored locally, not synced.</div>
+    </label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Jev</legend>
+    <label>Endpoint
+      <input id="jevEndpoint" type="text" placeholder="https://api.typesafe.ai/v1/systemone">
+      <div class="muted">Full System One URL. Another host (for example a gateway) asks for permission on Save.</div>
+    </label>
+    <label>Model
+      <input id="jevModel" type="text" placeholder="jev-latest">
+    </label>
+    <label>API key
+      <input id="jevApiKey" type="password" autocomplete="off">
+      <div class="muted">Stored in this browser's extension storage (local, not synced).</div>
+    </label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Classification</legend>
+    <label>Fallback collection (used when confidence is low)
+      <input id="fallbackCollection" type="text" placeholder="Inbox">
+    </label>
+    <label>Minimum confidence (0-1)
+      <input id="minConfidence" type="number" min="0" max="1" step="0.05">
+    </label>
+    <label>Rules, checked before Jev
+      <textarea id="rules" rows="5" placeholder="news.hada.io => Research &amp; Discovery&#10;/github\.com\/[^/]+\/[^/]+$/ => Software Engineering&#10;# lines starting with # are ignored"></textarea>
+    </label>
+    <label>Jev candidates: <code>Collection : criterion</code>, one per line
+      <textarea id="hints" rows="12"></textarea>
+      <div class="muted">Only listed collections are offered. Jev reads criteria literally, so write exclusions out.</div>
+    </label>
+    <div class="inline-actions"><button id="draftHints" type="button" class="secondary">Add my collections</button></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Tags</legend>
+    <label class="check"><input id="autoTags" type="checkbox"> Add tags with Jev</label>
+    <label>Minimum tag probability (0-1)
+      <input id="tagThreshold" type="number" min="0" max="1" step="0.05">
+    </label>
+    <label>Max tags per bookmark
+      <input id="maxTags" type="number" min="1" max="10" step="1">
+    </label>
+    <label>Tag vocabulary: <code>tag : when it applies</code>, one per line
+      <textarea id="tagVocab" rows="12"></textarea>
+      <div class="muted">Each line is one yes/no question in the same Jev request. Jev cannot invent tags outside this list.</div>
+    </label>
+    <div class="inline-actions"><button id="draftTags" type="button" class="secondary">Add my Raindrop tags</button></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Right-click saves</legend>
+    <label class="check"><input id="fetchLinkPages" type="checkbox"> Read the linked page's title and description</label>
+    <div class="muted">Without this, a link is classified from its URL and link text only. Turning it on asks for access to all sites.</div>
+  </fieldset>
+
+  <div class="actions">
+    <button id="test" type="button" class="secondary">Test connections</button>
+    <button id="save" type="button">Save</button>
+  </div>
+  <div id="status" role="status"></div>
+  <div id="report"></div>
+
+  <script type="module" src="options.js"></script>
+</body>
+</html>

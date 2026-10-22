@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Raindrop Autosort",
+  "version": "0.1.0",
+  "description": "Save the current tab to Raindrop.io with a Jev-picked collection.",
+  "action": { "default_popup": "popup.html", "default_title": "Save to Raindrop" },
+  "background": { "service_worker": "background.js", "type": "module" },
+  "options_page": "options.html",
+  "permissions": ["activeTab", "scripting", "storage", "contextMenus"],
+  "host_permissions": [
+    "https://api.raindrop.io/*",
+    "https://api.typesafe.ai/*"
+  ],
+  "optional_host_permissions": ["http://*/*", "https://*/*"],
+  "commands": {
+    "quick-save": {
+      "suggested_key": { "default": "Alt+Shift+S", "mac": "Alt+Shift+S" },
+      "description": "Classify and save the current tab without opening the popup"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "raindrop-autosort",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Chrome extension that saves the current tab to Raindrop.io and picks the collection with Jev.",
+  "license": "MIT",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  }
+}
