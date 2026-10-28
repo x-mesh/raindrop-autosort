@@ -1,11 +1,21 @@
 # Raindrop Autosort
 
+English | [한국어](README.ko.md)
+
 A Chrome extension (Manifest V3) that saves the current tab to [Raindrop.io](https://raindrop.io).
 TypeSafe Jev picks the collection and the tags for each bookmark.
 
 You list your collections with a short criterion for each. Jev reads the page and selects one
 collection from that list. If Jev is not sure, the bookmark goes to a fallback collection, and the
 popup lets you change the collection before you save.
+
+This is an unofficial extension. Raindrop.io did not make it and does not endorse it.
+Raindrop.io does not choose a collection for a new bookmark from criteria that you write.
+This extension adds that step to the Raindrop.io save flow.
+
+<img src="docs/popup.png" alt="The Save to Raindrop popup with the collection, tags and note filled in" width="360">
+
+The popup in this image shows sample data.
 
 ## Requirements
 
