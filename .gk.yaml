@@ -77,11 +77,11 @@ ai:
         trailer: false
         audit: false
 
-# policies: (commented-out, opt-in)
-#   secret_patterns:
-#     enabled: true
-#     mode: git
-#     redact: true
+policies:
+    secret_patterns:
+        enabled: true
+        mode: git
+        redact: true
 
 # Chrome reads manifest.json; npm reads package.json. Both carry the release version.
 ship:
