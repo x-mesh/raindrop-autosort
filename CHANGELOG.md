@@ -5,6 +5,14 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-10-30
+
+### Changed
+
+- Clarify classification instructions and default collection boundaries for overlapping topics.
+- Add guidance for writing collection criteria; existing saved criteria remain unchanged.
+- Add Korean documentation and an example popup screenshot.
+
 ## [0.1.0] - 2026-10-28
 
 ### Added
