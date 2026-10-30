@@ -92,6 +92,11 @@ Inbox : None of the other collections clearly fits.
 ```
 
 Jev reads each criterion literally. Write the exclusions out, as in the `Personal` line above.
+Describe each collection's purpose and audience, give representative examples, and name where excluded
+topics belong. When collections overlap, say which takes precedence. Check the criteria against several
+bookmarks you have already sorted, especially borderline cases. Keep the fallback for pages that do not
+clearly fit or lack enough information. Existing saved criteria are not replaced when defaults change;
+edit them in Options and save to apply your own boundaries.
 If no line matches a collection, Jev gets all collections with only their paths as criteria.
 
 The built-in list is an example for one set of collections. Replace it with your own collections.

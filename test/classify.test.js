@@ -85,6 +85,8 @@ test("buildJevRequest trims page text and adds one noul question per tag", () =>
   assert.equal(req.state.bookmark.site, "Ex");
   assert.equal(req.state.bookmark.selected_text, "sel");
   assert.equal(req.questions.collection.type, "choice");
+  assert.match(req.questions.collection.instructions, /primary purpose/);
+  assert.match(req.questions.collection.instructions, /exclusions/);
   assert.equal(req.questions.collection.criteria.dev, "Dev: software");
   assert.equal(req.questions.tag_0.type, "noul");
   assert.equal(req.questions.tag_0.criteria.true, "protocol");
