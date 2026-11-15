@@ -1,0 +1,20 @@
+{
+  "collections": [
+    { "id": 1, "title": "Dev", "path": "Dev" },
+    { "id": 2, "title": "Inbox", "path": "Inbox" }
+  ],
+  "settings": {
+    "hints": "Dev : Programming guides and developer tools.\nInbox : No other collection clearly fits.",
+    "autoTags": false
+  },
+  "cases": [
+    {
+      "page": {
+        "url": "https://example.com/guide",
+        "title": "A programming guide",
+        "description": "A guide to testing software."
+      },
+      "expected": "Dev"
+    }
+  ]
+}

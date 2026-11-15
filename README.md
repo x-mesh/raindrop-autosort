@@ -156,6 +156,14 @@ the site name, the description, the selected text and up to 600 characters of pa
 
 ## Development
 
+To evaluate real bookmarks, create a local JSON file with `collections` (objects with `id`, `title`, and
+`path`), `settings` (including your `hints` and `jevEndpoint`), and `cases` (objects with `page` and
+the expected collection `path`). Each page needs at least `url` and `title`; add `description` and `text`
+to match what the extension reads. Run `JEV_API_KEY=... node scripts/evaluate.mjs cases.json`.
+The tool sends the supplied page information to the configured Jev endpoint and prints each result and
+the accuracy including low-confidence fallback choices. Keep personal cases and API keys out of commits.
+Use `docs/evaluation-example.json` as a starting point and copy it outside the repository for private data.
+
 The extension has no build step. Chrome loads the source files directly.
 
 The tests use the Node.js test runner and need Node.js 22 or later. They replace `fetch` and the
