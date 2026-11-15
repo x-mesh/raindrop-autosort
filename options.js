@@ -114,6 +114,12 @@ async function save() {
     setStatus("Saved", "ok");
   } catch (e) {
     setStatus(String(e.message || e), "error");
+    return;
+  }
+  try {
+    await refreshReport(s, await new RaindropClient(s).collections());
+  } catch (e) {
+    setStatus(`Saved, but could not check settings: ${e.message}`, "error");
   }
 }
 
