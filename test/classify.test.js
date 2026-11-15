@@ -3,6 +3,8 @@ import assert from "node:assert/strict";
 import {
   buildCandidates,
   buildJevRequest,
+  compareDefaultHints,
+  applyDefaultHints,
   classify,
   draftHints,
   draftTagVocab,
@@ -67,6 +69,13 @@ test("buildCandidates offers every collection by path when no hint matches", () 
   const cands = buildCandidates("Nothing : here", [...COLS, { id: 5, title: "dev", path: "Other / dev" }]);
   assert.equal(cands.length, 5);
   assert.deepEqual(cands.at(-1), { key: "dev_", col: { id: 5, title: "dev", path: "Other / dev" }, criterion: "Other / dev" });
+});
+
+test("default hint updates preserve custom lines and only replace selected criteria", () => {
+  const current = "# Keep notes\nDev : old\nPersonal : custom\nOther : mine\nDev : duplicate";
+  const updates = compareDefaultHints(current, "Dev : new\nPersonal : default\nMissing : absent");
+  assert.deepEqual(updates.map((item) => item.name), ["Dev", "Personal"]);
+  assert.equal(applyDefaultHints(current, [updates[0]]), "# Keep notes\nDev : new\nPersonal : custom\nOther : mine\nDev : duplicate");
 });
 
 test("parseTagVocab normalizes tags and drops duplicates and comments", () => {
