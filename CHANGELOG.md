@@ -9,31 +9,22 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ### Added
 
-- add default-hint comparison and classification preview helpers
-- add Jev evaluation script with example cases
-- add extension icon (#2)
-
-### Fixed
-
-- refresh settings issues after saving options
-- route posts about AI usage norms to AI & Agents
-- clarify bookmark classification criteria (#1)
-
-## [0.1.1] - 2026-10-30
+- An extension icon.
+- Helpers that compare a classification with the default hints and preview the result.
+- A Jev evaluation script with example cases (`scripts/evaluate.mjs`).
+- Korean documentation and an example popup screenshot.
 
 ### Changed
 
 - Clarify classification instructions and default collection boundaries for overlapping topics.
 - Add guidance for writing collection criteria; existing saved criteria remain unchanged.
-- Add Korean documentation and an example popup screenshot.
+
+### Fixed
+
+- Posts about AI usage norms go to the AI & Agents collection.
+- The options page refreshes the list of settings issues after you save.
 
 ## [0.1.0] - 2026-10-28
-
-### Added
-
-- initial release 0.1.0
-
-## [0.1.0] - 2026-10-21
 
 ### Added
 
