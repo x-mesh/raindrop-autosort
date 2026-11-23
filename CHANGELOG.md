@@ -5,6 +5,20 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-11-23
+
+### Added
+
+- add default-hint comparison and classification preview helpers
+- add Jev evaluation script with example cases
+- add extension icon (#2)
+
+### Fixed
+
+- refresh settings issues after saving options
+- route posts about AI usage norms to AI & Agents
+- clarify bookmark classification criteria (#1)
+
 ## [0.1.1] - 2026-10-30
 
 ### Changed
